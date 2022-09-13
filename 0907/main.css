@@ -96,12 +96,12 @@ button{
 }
 .main{
     width: 1100px;
+    height: 600px;
     text-align: center;
     background-color: rgb(185, 186, 194);
 }
 #slideWrap { 
-    margin-left: 100px;
-    width: 900px; height: 600px; 
+    width: 1100px; height: 600px; 
     overflow: hidden; 
     position: relative; }
 #slider { 
@@ -109,5 +109,9 @@ button{
     position: absolute;
     list-style: none;
 }
+#slider img{
+    width: 1100px;
+    height: 600px;
+}
 #slider ul { display: inline; }
-#slider li { float: left; width: 900px; height: 100%;}
+#slider li { float: left; width: 1100px; height: 100%;}

@@ -55,8 +55,8 @@
                 <div id="slideWrap">
                     <ul id="slider">
                         <li><a href="#"><img src="main.jpg" alt="슬라이드1"></a></li>
-                        <li><a href="#"><img src="main.jpg" alt="슬라이드2"></a></li>
-                        <li><a href="#"><img src="main.jpg" alt="슬라이드3"></a></li>
+                        <li><a href="#"><img src="main_1.jpg" alt="슬라이드2"></a></li>
+                        <li><a href="#"><img src="main_3.jpg" alt="슬라이드3"></a></li>
                     </ul>
                 </div>
             </div>
@@ -72,14 +72,14 @@
 
     var firstItemClone = ul.firstElementChild.cloneNode(true);
     ul.appendChild(firstItemClone);
-    ul.style.width = (slideNumber + 1) * 900 + 'px'
+    ul.style.width = (slideNumber + 1) * 1100 + 'px'
 
     function move(){
       var i = 0;
 
       setInterval(function(){
         ul.style.transition = '0.2s';
-        ul.style.transform = 'translate3d(-'+900*(i+1)+'px, 0px, 0px)';
+        ul.style.transform = 'translate3d(-'+1100*(i+1)+'px, 0px, 0px)';
 
         i++;
 
