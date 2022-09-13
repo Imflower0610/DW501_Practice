@@ -1,0 +1,71 @@
+body, div, ul{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#hole{
+    width: 1500px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#head{
+    width: 1500px;
+    height: 150px;
+}
+.logo{
+    width: 400px;
+    height: 150px;
+    float: left;
+}
+.logo img{
+    width: 400px;
+    height: 150px;
+}
+
+.img img{
+    width: 1100px;
+    height: 150px;
+}
+
+#body{
+    width: 1500px;
+    height: 850px;
+}
+
+.input_wrap{
+    width: 550px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+}
+.text{
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    text-align: end;
+    margin-right: 50px;
+}
+.input{
+    width: 350px;
+    height: 60px;
+    line-height: 60px;
+}
+.input input{
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+}
+button{
+    margin-top: 20px;
+    width: 500px;
+    height: 60px;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+}
+.bt{
+    width: 1500px;
+    text-align: center;
+}

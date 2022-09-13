@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" type="text/css" href="image_board.css">
+</head>
+
+<body>
+
+    <div id="image_mask">
+        <div id="image_wrap">
+            <div class="image_title">
+                <div class="title_wrap">
+                    <b>갤러리</b>
+                    <!-- <b>=굵게 <u>=언더라인 -->
+                </div>
+            </div>
+            <div id="image_list">
+                <div class="line_wrap">
+                    <div class="cell cell_one">
+                       <div style="background: url(1.jpeg) no-repeat center center; background-size: cover;" class="img_area" >                     
+                         <a href="gallery_view.html?name=1&type=jpeg&title=너혹시뭐돼?"></a>
+                        </div>
+                        <!-- ? 앞에 내용 필요없고 이를 기준으로 나누기 -->
+                       <div class="title"><a href="gallery_view.html?name=1&type=jpeg&title=너혹시뭐돼?">너혹시뭐돼?</a></div>
+                    </div>
+                    <div class="cell cell_two">
+                        <div style="background: url(2.jpeg) no-repeat center center; background-size: cover;" class="img_area" >                     
+                            <a href="gallery_view.html?name=2&type=jpeg&title=돼지처럼먹을수도있지!"></a>
+                           </div>
+                          <div class="title"><a href="gallery_view.html?name=2&type=jpeg&title=돼지처럼먹을수도있지!">돼지처럼먹을수도있지!</a></div>
+                    </div>
+                    <div class="cell cell_three">
+                        <div style="background: url(3.jpeg) no-repeat center center; background-size:cover;" class="img_area" >                    
+                        </div>
+                        <div class="title">다죽일거야!</div>
+                     </div>   
+                </div>
+                <div class="line_wrap">
+                    <div class="cell cell_one">
+                        <div style="background: url(4.jpeg) no-repeat center center; background-size:cover;" class="img_area" >
+                        </div>                    
+                        <div class="title">말같지도않은소리하고있어!</div>
+                    </div>
+                    <div class="cell cell_two">
+                        <div style="background: url(5.jpg) no-repeat center center; background-size:cover;" class="img_area" >                      
+                        </div>
+                        <div class="title">이건아마우리의잘못은아닐거야...</div>
+                    </div>
+                    <div class="cell cell_three">
+                        <div style="background: url(66.jpeg) no-repeat center center; background-size:cover;" class="img_area" >                      
+                        </div>
+                        <div class="title">왜내가다이어트를해야하지?</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <style>
+        .a{width: 400px;
+         overflow: hidden;}
+         .a img{width: 400px; translate: 0.5s;}
+         .a:hover img{transform: scale(1.4);}
+    </style>
+    <div class="a"><img src="1.jpg" ></div>
+</body>
+
+</html>

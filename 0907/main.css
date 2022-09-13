@@ -1,0 +1,113 @@
+body, div, ul{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#hole{
+    width: 1500px;
+    height: 1000px;
+    margin: 0 auto;
+}
+#head{
+    width: 1500px;
+    height: 150px;
+}
+.logo{
+    width: 400px;
+    height: 150px;
+    float: left;
+}
+.logo img{
+    width: 400px;
+    height: 150px;
+}
+
+.img img{
+    width: 1100px;
+    height: 150px;
+}
+
+#body{
+    width: 1500px;
+    height: 850px;
+    display: flex;
+    flex-direction: row;
+}
+#sub_wrap{
+    width: 400px;
+    height: 850px;
+    background-color: aliceblue;
+}
+.login{
+    width: 350px;
+    height: 250px;
+    margin: 10px auto;
+    margin-top: 20px;
+}
+.id{ display: flex; flex-direction: row;}
+.login div p{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto;
+}
+.login div input{
+    width: 240px;
+    height: 25px;
+    margin: 10px auto;
+}
+button{ 
+    margin-top: 10px;
+    width: 350px; 
+    height: 40px;
+    background-color: black;
+    color: white;
+}
+.login div a{
+    text-decoration: none;
+}
+.sub_menu{
+    width: 350px;
+    margin: 0 auto;
+}
+.sub_menu ul{list-style-type: none;}
+.sub_menu ul li{
+    width: 350px;
+    height: 50px;
+    line-height: 50px;
+    background-color: lightgray;
+    margin: 10px auto;
+    font-size: 20px;
+   
+    text-align: center;
+}
+.sub_menu ul li a{
+    text-decoration: none;
+    color: black;
+}
+.sub_menu ul li:hover{
+    font-weight: 900;
+  
+}
+
+#main_wrap{
+    width: 1100px;
+    height:850px;
+}
+.main{
+    width: 1100px;
+    text-align: center;
+    background-color: rgb(185, 186, 194);
+}
+#slideWrap { 
+    margin-left: 100px;
+    width: 900px; height: 600px; 
+    overflow: hidden; 
+    position: relative; }
+#slider { 
+    height: 100%; 
+    position: absolute;
+    list-style: none;
+}
+#slider ul { display: inline; }
+#slider li { float: left; width: 900px; height: 100%;}

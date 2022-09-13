@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery_view.html</title>
+
+<script type="text/javascript">
+    //console.log(location.href);
+    //alert(location.href);
+    var url = location.href;
+    var params = url.split('?')[1]
+    // 첫번째는 0이고 [1]은 두번째임
+    params=params.split('&'); 
+    // params[0]-name=1, params[1]-type=jpeg
+    alert(params[0]);
+    var img_name=params[0].split('=')[1];
+    var img_type=params[1].split('=')[1];
+    var img_title=params[2].split('=')[1];
+
+    img_title=decodeURI(img_title);
+
+    alert(img_name);
+    alert(img_type);
+    alert(img_title);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

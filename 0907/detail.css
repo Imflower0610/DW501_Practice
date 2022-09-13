@@ -1,0 +1,110 @@
+body, div, ul{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#hole{
+    width: 1500px;
+    height: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+  
+}
+#first{
+    width: 400px;
+    height: 1000px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+#body{
+    width: 1100px;
+    height: 1000px;
+}
+.logo{
+        width: 400px;
+        height: 150px;
+        float: left;
+    }
+.logo img{
+        width: 400px;
+        height: 150px;
+    }
+    #sub_wrap{
+        width: 400px;
+        height: 850px;
+        background-color: aliceblue;
+    }
+    .login{
+        width: 350px;
+        height: 250px;
+        margin: 10px auto;
+        background-color: white;
+        border: 1px solid lightgray;
+    }
+    .id{ display: flex; flex-direction: column; text-align: center;}
+    .time{
+        width: 350px;
+        height: 70px;
+    }
+    .login div p{
+        width: 100px;
+        height: 20px;
+        margin: 10px auto;
+    }
+   
+    button{ 
+        width: 310px; 
+        height: 50px;
+        background-color: black;
+        color: white;
+        margin: 20px;
+        border-radius: 5px;
+    }
+    .login div a{
+        text-decoration: none;
+    }
+    .sub_menu{
+        width: 350px;
+        margin: 0 auto;
+    }
+    .sub_menu ul{list-style-type: none;}
+    .sub_menu ul li{
+        width: 350px;
+        height: 50px;
+        line-height: 50px;
+        background-color: lightgray;
+        margin: 10px auto;
+        font-size: 20px;
+        text-align: center;
+    }
+    .sub_menu ul li a{
+        text-decoration: none;
+        color: black;
+    }
+    .sub_menu ul li:hover{
+        font-weight: 900;
+      
+    }
+    
+    #main_wrap{       
+        width: 1100px;
+        height: 500px;
+        margin-top: 50px;
+        margin-left: 25px;
+        
+    }
+    #main{
+        float: left;
+        width: 330px;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid lightgray;
+    }
+    #main img{
+        width: 300px;
+        height: auto;
+        margin: 10px;
+       
+    }

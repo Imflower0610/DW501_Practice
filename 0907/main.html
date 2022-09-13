@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSINSA</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div id="hole">
+    <div id="head">
+        <div class="logo">
+            <a href="main.html"><img src="logo.jpg"></a>
+        </div>
+        <div class="img">
+            <img src="head_img.jpg">
+        </div>
+    </div>
+    <div id="body">
+        <div id="sub_wrap">
+            <div class="login">
+                <div class="id">
+                    <div><p>아이디</p></div>
+                    <div><input type="text"></div>
+                </div>
+                <div class="id">
+                    <div><p>비민번호</p></div>
+                    <div><input type="password"></div>
+                </div>
+                <div>
+                    <button>로그인</button>
+                </div>
+                <div style="margin-top: 10px;">
+                    <a href="join.html" style="color: black;">회원가입</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;
+                    <a href=""style="color: black;">아이디/비밀번호찾기</a>
+                </div>
+            </div>
+            <div class="sub_menu">
+                <div>
+                    <ul>
+                        <li><a href="detail.html">상의</a></li>
+                        <li><a href="detail.html">아우터</a></li>
+                        <li><a href="detail.html">바지</a></li>
+                        <li><a href="detail.html">원피스</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="main_wrap">
+            <div class="main">
+                <div id="slideWrap">
+                    <ul id="slider">
+                        <li><a href="#"><img src="main.jpg" alt="슬라이드1"></a></li>
+                        <li><a href="#"><img src="main.jpg" alt="슬라이드2"></a></li>
+                        <li><a href="#"><img src="main.jpg" alt="슬라이드3"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    //자동 스크롤 애니메이션
+    var ul = document.querySelector('#slider')
+    var slideNumber = document.querySelector('#slider').childElementCount
+    var li = document.querySelector('#slider>li')
+
+    var firstItemClone = ul.firstElementChild.cloneNode(true);
+    ul.appendChild(firstItemClone);
+    ul.style.width = (slideNumber + 1) * 900 + 'px'
+
+    function move(){
+      var i = 0;
+
+      setInterval(function(){
+        ul.style.transition = '0.2s';
+        ul.style.transform = 'translate3d(-'+900*(i+1)+'px, 0px, 0px)';
+
+        i++;
+
+        if (i == slideNumber){
+          setTimeout(function(){
+            ul.style.transition = '0s';
+            ul.style.transform = "translate3d(0px, 0px, 0px)";
+          },201)
+          i = 0;
+        }
+      },3000);
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+      move();
+    });
+
+  </script>
+</html>
