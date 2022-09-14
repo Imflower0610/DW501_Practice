@@ -52,50 +52,27 @@
         </div>
         <div id="main_wrap">
             <div class="main">
-                <div id="slideWrap">
-                    <ul id="slider">
-                        <li><a href="#"><img src="main.jpg" alt="슬라이드1"></a></li>
-                        <li><a href="#"><img src="main_1.jpg" alt="슬라이드2"></a></li>
-                        <li><a href="#"><img src="main_3.jpg" alt="슬라이드3"></a></li>
+                <div class="slider">
+                    <input type="radio" name="slide" id="slide1" checked>
+                    <input type="radio" name="slide" id="slide2">
+                    <input type="radio" name="slide" id="slide3">
+                    <input type="radio" name="slide" id="slide4">
+                    <ul id="imgholder" class="imgs">
+                        <li><img src="main.jpg"></li>
+                        <li><img src="main_1.jpg"></li>
+                        <li><img src="main_2.jpg"></li>
+                        <li><img src="main_3.jpg"></li>
                     </ul>
-                </div>
+                    <div class="bullets">
+                        <label for="slide1">&nbsp;</label>
+                        <label for="slide2">&nbsp;</label>
+                        <label for="slide3">&nbsp;</label>
+                        <label for="slide4">&nbsp;</label>
+                    </div>
+                </div>    
             </div>
         </div>
     </div>
 </div>
 </body>
-<script>
-    //자동 스크롤 애니메이션
-    var ul = document.querySelector('#slider')
-    var slideNumber = document.querySelector('#slider').childElementCount
-    var li = document.querySelector('#slider>li')
-
-    var firstItemClone = ul.firstElementChild.cloneNode(true);
-    ul.appendChild(firstItemClone);
-    ul.style.width = (slideNumber + 1) * 1100 + 'px'
-
-    function move(){
-      var i = 0;
-
-      setInterval(function(){
-        ul.style.transition = '0.2s';
-        ul.style.transform = 'translate3d(-'+1100*(i+1)+'px, 0px, 0px)';
-
-        i++;
-
-        if (i == slideNumber){
-          setTimeout(function(){
-            ul.style.transition = '0s';
-            ul.style.transform = "translate3d(0px, 0px, 0px)";
-          },201)
-          i = 0;
-        }
-      },3000);
-    }
-
-    document.addEventListener("DOMContentLoaded",function(){
-      move();
-    });
-
-  </script>
 </html>
