@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+
+<style>
+body, div,ul, li, button{margin: 0; padding: 0; box-sizing: border-box;}
+#holewrap{ 
+    width: 1100px; height: 900px; margin: 0 auto;
+    border: 1px solid black;
+    }
+#title{ width: 1100px; height: 100px; margin-top: 20px;
+    border-bottom: 1px solid black;
+   }
+h2{text-align: center;}
+.title{ width: 1100px; height: 100px; line-height: 50px; text-align: center;}
+#piece{
+    width: 1100px; height: 100px; line-height:100px; 
+    text-align: end; padding-right: 20px;
+    border-bottom: 1px solid black;
+    }
+.dis{color: gray;}
+#game{width: 1100px; height: 450px; position: relative;}
+.abc{width: 200px;height: 50px; line-height: 50px; text-align: end;}
+#final{width: 200px; height: 50px; line-height: 50px;}
+#result{width: 1100px; height: 230px; display: flex; flex-direction: row-reverse;}
+.dice1 li{
+    width: 250px; height: 250px;
+    position : absolute;
+    list-style-type : none;
+    top: 50px; left: 100px;
+    
+}
+.dice2 li{
+    width: 250px; height: 250px;
+    position : absolute;
+    list-style-type : none;
+    top: 50px; left: 430px;
+}
+.dice3 li{
+    width: 250px; height: 250px;
+    position : absolute;
+    list-style-type : none;
+    top: 50px; right: 100px;}
+
+</style>
+
+</head>
+
+<body>
+    <div id="holewrap">
+        <div id="title">
+            <div class="title"><h2>주사위 굴리기</h2></div>
+        </div>
+        <div id="piece">
+            <span class="text">주사위 개수 : 3개</span>
+            <span class="dis">(최소값 : 3 ~ 최대값 : 18)</span>
+        </div>
+
+    <div id="game">
+        <ul class="dice1">
+            <li class="one"><img src="1.jpg" alt="img"></li>
+            <li class="two"><img src="2.jpg" alt="img"></li>
+            <li class="three"><img src="3.jpg" alt="img"></li>
+            <li class="four"><img src="4.jpg" alt="img"></li>
+            <li class="five"><img src="5.jpg" alt="img"></li>
+            <li class="six"><img src="6.jpg" alt="img"></li>
+        </ul>
+        <ul class="dice2">
+            <li class="one"><img src="1.jpg" alt="img"></li>
+            <li class="two"><img src="2.jpg" alt="img"></li>
+            <li class="three"><img src="3.jpg" alt="img"></li>
+            <li class="four"><img src="4.jpg" alt="img"></li>
+            <li class="five"><img src="5.jpg" alt="img"></li>
+            <li class="six"><img src="6.jpg" alt="img"></li>
+        </ul>
+        <ul class="dice3">
+            <li class="one"><img src="1.jpg" alt="img"></li>
+            <li class="two"><img src="2.jpg" alt="img"></li>
+            <li class="three"><img src="3.jpg" alt="img"></li>
+            <li class="four"><img src="4.jpg" alt="img"></li>
+            <li class="five"><img src="5.jpg" alt="img"></li>
+            <li class="six"><img src="6.jpg" alt="img"></li>
+        </ul>
+    </div>
+    <div id="result">
+        <div id="final"> </div>
+        <div class="abc">결과 :</div>
+    </div>
+    </div>
+</body>
+
+<script>
+    // 1~6 랜덤값 만들기
+    var a = Math.floor(Math.random()*6)+1;
+    var b = Math.floor(Math.random()*6)+1;
+    var c = Math.floor(Math.random()*6)+1;
+    var d = Math.floor(Math.random()*6)+1;
+    var e= Math.floor(Math.random()*6)+1;
+    var f = Math.floor(Math.random()*6)+1;
+    //주사위에 표기
+    document.getElementsByClassName("dice1").innerHTML
+
+    // 랜덤값 더하기 만들기
+    var user = a+b+c;
+    var com = d+e+f;
+    var result=0;
+    
+    // 예외사항 넣기
+    if(a+b+c==3) user =20;
+    if(d+e+f==3) com =20;
+    if(a==3&&b==3&&c==3) user =19;
+    if(d==3&&e==3&&f==3) com=19;
+    
+
+    // 결과표출하기
+    function showResult(user, com){
+        com==user? resrult="비겼습니다.":
+        com>user? result="컴퓨터가 이겼습니다.":result="내가 이겼습니다."
+        document.write(result);
+    }
+
+
+
+</script>
+
+</html>

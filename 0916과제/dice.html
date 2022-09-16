@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+
+<style>
+body, div,button{margin: 0; padding: 0; box-sizing: border-box;}
+#holewrap{ width: 600px; height: 500px; margin: 0 auto;}
+#title{ width: 600px; height: 50px; margin-top: 20px;}
+h2{display: inline;}
+.title{ width: 600px; height: 50px; line-height: 50px; text-align: center;}
+#piece{width: 600px; height: 50px; line-height:50px; float: left;}
+#img{width: 600px; height: 400px;}
+button{width: 20px; height: 20px;}
+.dis{color: gray;}
+</style>
+
+</head>
+
+<body>
+    <div id="holewrap">
+        <div id="title">
+            <div class="title"><h2>주사위 굴리기</h2></div>
+        </div>
+        <div id="piece">
+            <span class="text">주사위 개수</span>
+            <button class="minus">-</button>
+            <em><span class="count"></span>개</em>
+            <button class="plus">+</button>
+            <span class="dis">(최소 1개~최대 4개)</span>
+        </div>
+
+    <div id="img">
+        <div class = dice>
+            <div class="img"><img src="" alt=""></div>
+        </div>
+        
+    </div>
+    </div>
+</body>
+</html>
