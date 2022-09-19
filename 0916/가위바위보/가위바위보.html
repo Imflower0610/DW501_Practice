@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+<style>
+    body, div, img, p{margin:0; padding:0;box-sizing: border-box;}
+    #hole_wrap{
+        width: 1200px; height: 920px;
+        margin: 0 auto;
+        background-color: blue;
+    }
+    #title{
+        width: 1200px; height: 200px;text-align: center; padding-top: 30px;
+    }
+    #main{
+        width: 1200px; height: 720px;
+        text-align: center;
+    }
+    #com{
+        width: 1200px; height: 350px; margin-left: 400px;
+    }
+    #user{
+        width: 1200px; height: 370px; display: flex;
+    }
+    #title img{ width: 800px; }
+    .img{ width: 400px;}
+    .img img{width: 240px;}
+    #img1{ width: 400px;}
+    #img1 img{width: 200px;padding-top: 10px;}
+</style>
+</head>
+<body>
+    <div id="hole_wrap">
+        <div id="title">
+            <img src="title.png" alt="">
+        </div>
+        <div id="main">
+            <div id="com">
+                <div id="img1">
+                    <img src="1.png" alt="">
+                </div>
+            </div>
+            <div id="user">
+                <div class="img">
+                    <img src="1.png" onclick="rock" alt="" id="r">
+                </div>
+                <div class="img">
+                    <img src="2.png" onclick="rock" alt="" id="s">
+                </div>
+                <div class="img">
+                    <img src="3.png" onclick="rock" alt="" id="p">
+                </div>
+            </div>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+<script>
+var com=Math.floor(Math.random()*3)+1;
+var result=0;
+var res = document.getElementById('result');
+for( var i=1; i<=3; i++){
+        if(com==i){
+            var img=document.getElementById("img1");
+            img.src=+i+'.png';}
+}
+function rock(){
+ 
+    var user=1;
+    user==com? result="무승부":
+    user>com? result="승리": result="패배"
+ res.innerHTML=result
+}
+</script>
+</html>
