@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+
+<style>
+body, div,ul, li, button,p{margin: 0; padding: 0; box-sizing: border-box;}
+#holewrap{ 
+    width: 1100px; height: 950px; margin: 0 auto;
+    border: 1px solid black;
+    }
+#title{ width: 1100px; height: 100px; margin-top: 20px;
+    border-bottom: 1px solid black;
+   }
+h2{font-size:50px;text-align: center;}
+.title{ width: 1100px; height: 100px; line-height: 60px; text-align: center;}
+#piece{
+    width: 1100px; height: 50px; line-height:50px; 
+    text-align: end; padding-right: 20px;
+    border-bottom: 1px solid black;
+    }
+.dis{color: gray;}
+#middle{width: 1100px; height: 600px; text-align: center;}
+#result{width: 1100px; height: 150px; }
+#final{ line-height: 0px;}
+
+#comgame{width: 1100px; height: 100px; text-align: end; display: flex; margin-left: 375px;}
+#dice4, #dice5, #dice6{width: 70px; height: 100px; margin-right: 50px;}
+#dice4 img, #dice5 img, #dice6 img{
+    width: 100px; height: 100px;}
+
+#game{width: 1100px; height: 260px;display: flex; padding-left: 100px;}
+#dice1, #dice2 , #dice3{ width: 300px; height: 250px; text-align: center;}
+#dice1 img, #dice2 img, #dice3 img{
+    width: 250px; height: 250px;}
+#ju{font-size:20px; font-weight: 800;height: 40px; line-height: 40px;}
+#jut{font-size:30px;font-weight: 800;height: 60px; line-height: 60px;}
+.push{
+    width:500px; height:80px; 
+    font-size:30px;
+    margin-top: 20px;
+    font-weight: 800;
+    border-radius: 20px;
+}
+</style>
+
+</head>
+
+<body>
+<!-- 헤드 만들기 -->
+    <div id="holewrap">
+        <div id="title">
+            <div class="title"><h2>주사위 굴리기</h2></div>
+        </div>
+        <div id="piece">
+            <span class="text">주사위 개수 : 3개</span>
+            <span class="dis">(최소값 : 3 ~ 최대값 : 18)</span>
+        </div>
+<!-- 바디 만들기 -->
+    <div id="middle">
+        <div id="ju"><p>컴퓨터 주사위</p></div> 
+        <div id="comgame">
+            <div id="dice4">
+                <img src="1.jpg" alt="img" id="img4">
+             </div>
+             <div id="dice5">
+                 <img src="1.jpg" alt="img" id="img5">
+             </div>
+             <div id="dice6">
+                 <img src="1.jpg" alt="img" id="img6">
+             </div>
+        </div>
+        <div id="jut"><p>내 주사위</p></div> 
+        <div id="game">
+            <div id="dice1">
+               <img src="1.jpg" alt="img" id="img1">
+            </div>
+            <div id="dice2">
+                <img src="1.jpg" alt="img" id="img2">
+            </div>
+            <div id="dice3">
+                <img src="1.jpg" alt="img" id="img3">
+            </div>
+        </div>  
+        <button class="push" onclick="result()"> 주사위 굴리기 </button>
+    </div>
+<!-- 결과 만들기 -->
+    <div id="result">
+        <div id="final"></div>
+    </div>
+    </div>
+    </div>
+</body>
+
+<script>
+function result(){
+    // 기본값 주기
+    var res= document.getElementById('final');
+    var a = Math.floor(Math.random()*6)+1;
+    var b = Math.floor(Math.random()*6)+1;
+    var c = Math.floor(Math.random()*6)+1;
+    var d = Math.floor(Math.random()*6)+1;
+    var e= Math.floor(Math.random()*6)+1;
+    var f = Math.floor(Math.random()*6)+1;
+    
+    //주사위에 표시
+    for( var i=1; i<=6; i++){
+        if(a==i){
+            var img=document.getElementById("img1");
+            img.src=+i+'.jpg';}
+        if(b==i){
+            var img=document.getElementById("img2");
+            img.src=i+'.jpg';}
+        if(c==i){
+            var img=document.getElementById("img3");
+            img.src=i+'.jpg';
+        }
+    }
+    for( var i=1; i<=6; i++){
+        if(d==i){
+            var img=document.getElementById("img4");
+            img.src=+i+'.jpg';}
+        if(e==i){
+            var img=document.getElementById("img5");
+            img.src=i+'.jpg';}
+        if(f==i){
+            var img=document.getElementById("img6");
+            img.src=i+'.jpg';
+        }
+    }
+    // 랜덤값 더하기 만들기
+    var user = a+b+c;
+    var com = d+e+f;
+    var result=0;
+    
+    // 예외사항 넣기
+    if(user==3) user =20;
+    else if(com==3) com =20;
+    else if(a==3&&b==3&&c==3) user =19;
+    else if(d==3&&e==3&&f==3) com =19;
+
+    // 결과표출하기
+    com==user? result="비겼습니다!":
+    com>user? result="컴퓨터가 이겼습니다!":result="내가 이겼습니다!";
+    res.innerHTML="<h2>" +result+"</h2>";
+    
+
+
+}
+</script>
+
+</html>
