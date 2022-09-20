@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가위바위보</title>
-<style>
-    body, div, img, p{margin:0; padding:0;box-sizing: border-box;}
-    #hole_wrap{
-        width: 1200px; height: 920px;
-        margin: 0 auto;
-        background-color: blue;
-    }
-    #title{
-        width: 1200px; height: 200px;text-align: center; padding-top: 30px;
-    }
-    #main{
-        width: 1200px; height: 720px;
-        text-align: center;
-    }
-    #com{
-        width: 1200px; height: 350px; margin-left: 400px;
-    }
-    #user{
-        width: 1200px; height: 370px; display: flex;
-    }
-    #title img{ width: 800px; }
-    .img{ width: 400px;}
-    .img img{width: 240px;}
-    #img1{ width: 400px;}
-    #img1 img{width: 200px;padding-top: 10px;}
-</style>
+    <style>
+        body,
+        div,
+        img,
+        p {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #hole_wrap {
+            width: 1200px;
+            height: 920px;
+            margin: 0 auto;
+            background-color: blue;
+            position: relative;
+        }
+
+        #title {
+            width: 1200px;
+            height: 200px;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        #main {
+            width: 1200px;
+            height: 720px;
+            text-align: center;
+        }
+
+        #com {
+            width: 1200px;
+            height: 350px;
+            margin-left: 400px;
+        }
+
+        #user {
+            width: 1200px;
+            height: 370px;
+            display: flex;
+        }
+
+        #title img {
+            width: 800px;
+        }
+
+        .img {
+            width: 400px;
+        }
+
+        .img img {
+            width: 240px;
+        }
+
+        #img1 {
+            width: 400px;
+        }
+
+        #img1 img {
+            width: 200px;
+            padding-top: 10px;
+        }
+
+        #result {
+            width: 1200px;
+            height: 300px;
+            position: absolute;
+            top: 300px;
+        }
+    </style>
 </head>
-<body>
+
+<body onload="esse()">
     <div id="hole_wrap">
         <div id="title">
             <img src="title.png" alt="">
@@ -40,39 +87,96 @@
         <div id="main">
             <div id="com">
                 <div id="img1">
-                    <img src="1.png" alt="">
+                    <img src="1.png" alt="" id="comimg">
                 </div>
             </div>
             <div id="user">
                 <div class="img">
-                    <img src="1.png" onclick="rock" alt="" id="r">
+                    <img src="1.png" onclick="rock()" alt="" id="r">
                 </div>
                 <div class="img">
-                    <img src="2.png" onclick="rock" alt="" id="s">
+                    <img src="2.png" onclick="scissors()" alt="" id="s">
                 </div>
                 <div class="img">
-                    <img src="3.png" onclick="rock" alt="" id="p">
+                    <img src="3.png" onclick="paper()" alt="" id="p">
                 </div>
             </div>
-            <div id="result"></div>
+            <div id="result"><img src="" id="resultimg" onclick="retry()" alt=""></div>
         </div>
     </div>
 </body>
 <script>
-var com=Math.floor(Math.random()*3)+1;
-var result=0;
-var res = document.getElementById('result');
-for( var i=1; i<=3; i++){
-        if(com==i){
-            var img=document.getElementById("img1");
-            img.src=+i+'.png';}
-}
-function rock(){
- 
-    var user=1;
-    user==com? result="무승부":
-    user>com? result="승리": result="패배"
- res.innerHTML=result
-}
+    
+    var result = 0;
+    var res = document.getElementById('result');
+    var imgArray = new Array();
+    imgArray[0] = "1.png";
+    imgArray[1] = "2.png";
+    imgArray[2] = "3.png";
+    var set;
+    var flag = 1;
+    function esse() {
+        var img = document.getElementById("comimg");
+        var imgNum = Math.round(Math.random() * 2);
+        img.src = imgArray[imgNum];
+        set = setTimeout(esse, 70);
+    }
+    function rock() {
+        clearTimeout(set);
+        var com = Math.floor(Math.random() * 3) + 1;
+        for (var i = 1; i <= 3; i++) {
+            if (com == i) {
+                var img = document.getElementById("comimg");
+                img.src = i + ".png";
+            }
+        }
+         
+        var user = 1;
+        user == com ? result = "more" :
+            com - user == 1 ? result = "win" : result = "lose";
+        var img1 = document.getElementById("resultimg");
+        img1.src = result + ".png";
+        
+
+    }
+    function scissors() {
+        clearTimeout(set);
+        var com = Math.floor(Math.random() * 3) + 1;
+        for (var i = 1; i <= 3; i++) {
+            if (com == i) {
+                var img = document.getElementById("comimg");
+                img.src = i + ".png";
+            }
+        }
+        var user = 2;
+        user == com ? result = "more" :
+            com - user == 1 ? result = "win" : result = "lose"
+        var img1 = document.getElementById("resultimg");
+        img1.src = result + ".png";
+       
+    }
+    function paper() {
+        clearTimeout(set);
+        var com = Math.floor(Math.random() * 3) + 1;
+        for (var i = 1; i <= 3; i++) {
+            if (com == i) {
+                var img = document.getElementById("comimg");
+                img.src = i + ".png";
+            }
+        }
+        var user = 3;
+        user == com ? result = "more" :
+            user - com == 1 ? result = "lose" : result = "win"
+        var img1 = document.getElementById("resultimg");
+        img1.src = result + ".png";
+        
+    }
+    function retry(){
+        var img1 = document.getElementById("resultimg");
+        img1.src = '';
+        set = setTimeout(esse, 100);
+    }
+
 </script>
+
 </html>
