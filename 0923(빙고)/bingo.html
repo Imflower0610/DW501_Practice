@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 공통설정 */
+    body,
+    div,
+    button,
+    p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    p {
+        height: 150px;
+        font-size: 800%;
+        font-weight: 900;
+        color: white;
+        letter-spacing: 50px;
+        /* 글자사이간격 */
+        padding-left: 60px;
+    }
+/* 기본설정 */
+    #wrap {
+        width: 1800px;
+        height: 1000px;
+        background-color: rgb(230, 74, 74);
+        margin: 0 auto;
+        display: flex;
+    }
+
+    /* 왼쪽 내 게임 */
+    #mine {
+        width: 900px;
+        height: 1000px;
+    }
+
+    #title {
+        width: 900px;
+        height: 150px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #me_game {
+        width: 700px;
+        height: 700px;
+        background-color: white;
+        margin-left: 100px;
+        margin-top: 50px;
+        border: 2px solid black;
+        padding: 4px;
+    }
+    #mybingo{
+        width: 133px;
+        height: 133px;
+        border: 2px solid black;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+    /* 오른쪽 결과 + 컴게임 */
+    #com {
+        width: 900px;
+        height: 1000px;
+        text-align: center;
+    }
+
+    /* 시작버튼 */
+    button {
+        width: 800px;
+        height: 150px;
+        background: transparent;
+        border: 1px solid white;
+    }
+
+    /* 결과 */
+    #result {
+        width: 900px;
+        height: 300px;
+    }
+    #count {
+        margin: 50px;
+        padding: 50px;
+        width: 800px;
+        height: 250px;
+        font-size: 40px;
+        background-color: white;
+    }
+
+    /* 컴게임 */
+    #com_game {
+        width: 900px;
+        height: 500px;
+    }
+</style>
+
+<body>
+    <div id="wrap">
+        <div id="mine">
+            <div id="title">
+                <p>BINGO</p>
+            </div>
+            <div id="me_game">
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div>
+                <div id="mybingo"></div> 
+            </div>
+
+        </div>
+        <div id="com">
+            <div id="result">
+                <div id="count">
+                   BINGO : 
+                
+                </div>
+            </div>
+            <button onclick="start()">
+                <p>START</p>
+            </button>
+            <div id="com_game"></div>
+
+        </div>
+    </div>
+</body>
+<script>
+    function start() {
+        // 컴퓨터 빙고판 만들어주기
+        // 컴퓨터 랜덤값 출력
+        var com_num = [];
+        for (i = 0; com_num.length < 25; i++) {
+            var com = Math.floor(Math.random() * 100) + 1;
+            if (com_num.indexOf(com) < 0) {
+                com_num.push(com);
+                com_num.sort((a, b) => a - b);
+            }
+        }
+
+        console.log(com_num);
+
+        // 컴퓨터 랜덤값 배열로 가져오기
+
+        // 내가 입력한 값 빙고판에 입력- 배열로 가져오기
+
+        // 숫자 선택하기
+
+        // 같은 배열에 있는 값을 컴퓨터가 선택하게 만들기
+
+        // 선택한 숫자가 있는 빙고칸 색깔 바꾸기
+
+        // 컴퓨터 칸에 있는 숫자도 색깔 바꾸기
+
+        // 배열 5개가 완성되면 승리
+
+        // 배열 5개를 컴퓨터가 먼저 완성하면 컴퓨터 승리
+
+        // 결과출력
+        // 컴퓨터게임 출력값 빙고판에 출력
+        // 결과 출력
+
+    }
+
+
+</script>
+
+</html>
