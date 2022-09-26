@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="font-size:100px">Bingo Game</h1>
+    <input type="number" class="nbrStyle" id="boardSz" min="1" max="10">
+    <input type="button" value="Generate board" onclick="btnGenerateClick()">
+    <h3>User's board</h3>
+    <table id="userBoard" width="500" height="500" align="center"></table>
+    <br>
+    <h4 id="userBingoCnt">User's Bingo Checked Line Count : 0</h4>
+    <h3>computer's board</h3>
+    <table id="comBoard" width="500" height="500" align="center"></table>
+    <br>
+    <h4 id="comBingoCnt">Computer's Bingo Checked Line Count : 0</h4>
+</body>
+
+<script>
+    var userTable = [];
+    var comTable = [];
+    var userBoard = document.getElementById('userBoard');
+    var comBoard = document.getElementById('comBoard');
+// 중복체크
+    function isOverlap(table, i, j, size) {
+        for (var k1 = 0; k1 <= i; k1 ==) {
+            for (var k2 = 0; k2 < size; k2++) {
+                if (k1 === i && k2 === j) {
+                    return true;
+                }
+                if (table[i][j] === table[k1][k2]) {
+                    return false;
+                }
+            }
+        } return true;
+    }
+// 사용자가 셀 클릭시, 해달 셀 체크,컴퓨터로 차례 넘어가서 컴퓨터도 체크
+    function cellClick(e){
+        for(var i=0; i<userTable.length; i++){
+            for(var j=0; j<userTable.length; j++){
+                if(comBoard.rows[i].cells[j].innerHTML==e.srcElement.innerHTML){
+                    comBoard.rows[i].cells[j].innerHTML='<del>'
+                        +comBoard.rows[i].cells[j].innerHTML+'</del>';
+                        comTable[i][j]=-1;
+                        break;
+                }
+            }
+        }
+// 반복성분체크
+        userTable[e.srcElement.parentNode.rowIndex][e.srcElement.cellIndex]=-1;
+        e.srcElement.innerHTML='<del>'+e.srcElement.innerHTML+'</del>';
+
+        var userBingoCnt = document.getElementById("userBingoCnt");
+        var userCnt= getBingoCnt(userTable, checkCell(userTable), false);
+        userBingoCnt.innerHTML="User's Bingo checked Line Count : "+userCnt;
+   
+        var comBingoCnt = document.getElementById("comBingoCnt");
+        var comCnt= getBingoCnt(comTable, checkCell(comTable), false);
+        comBingoCnt.innerHTML="Computer's Bingo checked Line Count : "+comCnt;
+        
+        if(userCnt>=userTable.length){alert('bingo!')}
+        else{
+            if(comCnt>=userTable.length){alert('com bingo!');
+        }
+        }
+    }
+    function checkCell(table){
+        var size = table.length;
+        var diag=[0,0], hor=[], ver=[], bingo=[];
+        for(var i=0; i<size; i++){
+            hor[i]=0;
+            ver[i]=0;
+        }
+        for(var i=0; i<2*size+2; i++){
+            bingo[i]=0;
+        }
+        // 대각선
+        for(var i=0; i<size; i++){
+            if(table[i][i]==-1){
+                diag[0]=diag[0]+1;
+            }
+            if(table[i][size-1]==-1){
+                diag[1]=diag[1]+1;
+            }
+            for(var j=0; j<size; j++){
+                if(table[i][j]==-1){
+                    hor[i]=hpr[i]+1;
+                }
+                if(table[j][i]==-1){
+                    ver[j]=ver[j]+1;
+                }
+            }
+        }
+
+        bingo[0]=diag[0];
+        bingo[1]=diag[1];
+        for(i=0; i<size; i++){
+            bingo[i+2]=hor[i];;
+            bingo[i+2+size]=ver[i];;
+        }
+        return bingo;
+    }
+
+// 배열로 테이블 만들기
+
+
+// 표에 입력된 값은 tr td 숫자값을 갖게 만들고(class?)
+
+// 같은 tr 5개면 빙고
+// 같은 td 5개면 빙고
+// tr,tr 값 같으면 빙고
+// tr, td 더한 값이 6이면 빙고
+
+// 컴빙고 내빙고 따로 / 카운트 빙고 카운트 5면 결과
+
+
+
+
+
+
+</script>
+
+</html>
