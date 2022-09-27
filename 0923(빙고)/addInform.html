@@ -29,7 +29,7 @@
     var comBoard = document.getElementById('comBoard');
 // 중복체크
     function isOverlap(table, i, j, size) {
-        for (var k1 = 0; k1 <= i; k1 ==) {
+        for (var k1 = 0; k1 <= i; k1 ++) {
             for (var k2 = 0; k2 < size; k2++) {
                 if (k1 === i && k2 === j) {
                     return true;
@@ -106,6 +106,17 @@
         }
         return bingo;
     }
+for(i=0; i<2*size+2; i++){
+    cnt =cnt+Math.floor(bingo[i]/size);
+    if(bAuto&&bingo[i]>check_max && bingo[i]<size){
+        check_max = bingo[i];
+        maxIdx=i;
+    }
+}
+if(!bAuto){
+    return cnt;
+}
+
 
 // 배열로 테이블 만들기
 
