@@ -107,7 +107,7 @@
         return bingo;
     }
 for(i=0; i<2*size+2; i++){
-    cnt =cnt+Math.floor(bingo[i]/size);
+    cnt = cnt + Math.floor(bingo[i]/size);
     if(bAuto&&bingo[i]>check_max && bingo[i]<size){
         check_max = bingo[i];
         maxIdx=i;
@@ -116,8 +116,89 @@ for(i=0; i<2*size+2; i++){
 if(!bAuto){
     return cnt;
 }
+if(maxIdx==0){
+    var mPt = Math.floor(size/2)+1;
+    if(table[mPt][mPt]!=-1){
+    table[mPt][mPt]=-1;
+    comBoard.rows[mPt].cells[mPt].innerHTML="<del>"
+    +comBoard.rows[mPt].cells[mPt].innerHTML+"</del>"
+    }
+    for(var i=0; i<size; i++){
+        if(table[i][i]!=-1){
+            table[i][i]=-1;
+            comBoard.rows[i].cells[i].innerHTML="<del>"
+            +comBoard.rows[i].cells[i].innerHTML+"</del>"
+            break;
+        }
+    }
+}
+else if(maxIdx==1){
+    for(var i =0; i<size; i++){
+        if(table[i][size-1-i]!=-1){
+            table[i][size-1-i]=-1;
+            comBoard.rows[i].cells[size-1-i].innerHTML="<del>"
+            +comBoard.rows[i].cells[size-1-i].innerHTML+"</del>"
+            break;
+        }
+    }
+}
+else if(maxIdx<size+2){
+    for(var i =0; i<size; i++){
+        if(table[maxIdx-2][i]!=-1){
+            table[maxIdx-2][i]=-1;
+            comBoard.rows[maxIdx-2].cells[i].innerHTML="<del>"
+            +comBoard.rows[maxIdx-2].cells[i].innerHTML+"</del>"
+            break;
+        }
+    }
+}
+else{
+    for(var i =0; i<size; i++){
+        if(table[i][maxIdx-2]!=-1){
+            table[i][maxIdx-2]=-1;
+            comBoard.rows[i].cells[maxIdx-2].innerHTML="<del>"
+            +comBoard.rows[i].cells[maxIdx-2].innerHTML+"</del>"
+            break;
+        }
+    }
+}
+return cnt;
 
+function btnGenerateClick(){
+    userBoard.innerHTML="";
+    comBoard.innerHTML="";
+    var size = document.getElementById('boardSz').value;
+    for(var i=0; i<size; i++){
+        var row = userBoard.insertRow(userBoard.rows.length);
+        var comRow = comBoard.insertRow(comBoard.rows.length);
+        userTable[i]=[];
+        comTable[i]=[];
+        for(var j=0;j<size;j++){
+            userTable[i][j]= Math.floor(Math.random()*size*size*2);
+            comTable[i][j]= Math.floor(Math.random()*size*size*2);
+            if(i!=0||j!=0){
+                while(true){
+                    if(isOverlap(userTable, i, j,size)){
+                        break;
+                    }
+                    userTable[i][j]=Math.floor(Math.random()*size*size*2);
+                }
+                while(true){
+                    if(isOverlap(userTable, i, j,size)){
+                        break;
+                    }
+                    comTable[i][j]=Math.floor(Math.random()*size*size*2);
+                }
+            }
+            var comCell = comRow.insertCell(j);
+            comCell.innerHTML=comTable[i][j];
+            var userCell = userRow.insertCell(j);
+            userCell.innerHTML=userTable[i][j];
+            userCell.onclick = cellClick;
 
+        }
+    }
+}
 // 배열로 테이블 만들기
 
 
