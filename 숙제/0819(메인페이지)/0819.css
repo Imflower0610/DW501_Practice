@@ -1,0 +1,284 @@
+body, ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;}
+
+#top{background-color: pink;}
+.start_home{
+    height: 30px;
+    border: 0;
+    background-color: pink;
+    color: white;
+    margin-left: 20px;
+    font-size: 100%;
+}
+.start_home:hover{
+    width: 20%;
+    background-color: white;
+    color: rgb(255, 121, 121);
+}
+
+header{
+    background-color: pink;
+    padding-left: 10%;}
+
+
+.cat_img{
+    width: 15%;
+    height: auto;
+    float: left;
+}
+#head{margin-top: 10%;}
+#header{    
+    width: 100%;
+    margin-top: 5%;
+}
+.search{
+    width: 50%;
+    height: 35px;
+    float: left; 
+    margin-left: 50px;
+    margin-top: 5px;
+
+}
+.srh_input{ 
+    width: 100%; height: 100%;
+    border:0;
+    padding-left: 20px;
+}
+.srh_bt{
+    width: 7%;
+    height: 35px;
+    border:0;
+    background-color: rgb(255, 121, 121);
+    color: white;
+    font-weight: 800;
+    margin-top: 5px;
+
+}
+.srh_bt:hover{
+    background-color: white;
+    color: rgb(255, 121, 121);
+    border:2px solid rgb(255, 121, 121);
+    transition: 0.7s;
+    cursor: pointer;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+.logo_1{
+    font-size: 450%;
+    font-weight: 800;
+    flex-direction: row;
+}
+.logo_2{
+    font-size: 150%;
+    font-weight: 800;
+    padding-top: 50px;
+    padding-left:10px;
+}
+nav{width: 100%;}
+#menu_box{
+    background-color: rgb(255 121 121);
+    width: 100%;
+    height: 45px;
+    display: flex;
+}
+.menu{
+    width: 100%;
+    list-style-type:none;
+    flex-direction: row;
+}
+.menu_list{
+    display: inline;
+    margin-left: 10%;
+    height: 30px;
+    font-size: 100%;
+    font-weight: 800;
+    line-height: 300%;
+}
+.menu_list:hover{
+    color: white;
+    font-style: italic;
+}
+  
+#sub_box{
+    position: sticky;
+    margin: 20px;
+    border: 2px solid salmon;
+    border-radius: 10px; height: 550px;
+}
+.sub{
+    list-style-type: none;
+    flex-basis: 20%;
+    margin: 50px 10px 50px 10px ;
+}
+.sub_sub{
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    line-height: 2;
+    color: white;
+    font-size: 12pt;
+}
+.sub_list{
+    margin: 10px;
+    font-size: 13pt;
+    font-weight: 700;
+}
+.sub_list:hover{
+    font-size: 15pt;
+    background-color: salmon;
+    width: 150%;
+    padding-left: 20%;
+}
+.sub_list:hover .sub_sub{
+    display: block;
+}
+.sub_sub_list:hover{
+    font-style: italic;
+    width: 150%;
+    padding-left: 20%;
+}
+section{
+    width: 100%;
+    display: flex;
+
+}
+.weekly{
+    width: 100%;
+    flex-basis: 60%;
+}
+h2{
+   background-color: pink;
+   height: 50px;
+   padding-left: 20px;
+   padding-top: 15px;
+}
+.w_img{
+    width:100%;
+}
+img{
+    float: left;
+    width: 50%;
+    margin-right: 30px;
+}
+.w_d{
+    font-size: 12ptt;
+    padding: 10px; 
+    line-height: 50px; 
+      
+}
+#login1{
+    margin-top: 20px;
+    height: 200px;
+    flex-basis: 20%;
+
+}
+#login{
+    border: 2px solid salmon;
+    border-radius: 10px;
+    height: 200px;
+    margin: 20px;
+    padding-left: 20px ;
+    font-size: 10pt;
+}
+.input_wrap{
+    display: flex;
+    margin-bottom:10px; 
+}
+.input_wrap input{
+    width: 80%;
+    height: 20px;
+    border: 2px solid #999;
+    font-size: 10pt;
+    border-radius: 10px;
+    margin: 5px;
+}
+.title{
+    margin: 10px;
+}
+p{font-size: 10pt;}
+.log_bt{
+    width: 90%;
+    height: 30px;
+    background-color: pink;
+    border: 2px solid pink;
+    border-radius: 10px;
+}
+.a{
+    width: 100%;
+    height: 65px;
+    background-color: pink;
+}
+
+#footer{
+    margin-top: 50px;
+    padding: 50px;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(233, 233, 233);
+}
+#titi{
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+    width: 30%;
+}
+.tit{
+    margin: 20px;
+    font-size: 13pt;
+    font-weight: 800;
+}
+.tit_d{
+    line-height: 1.6;
+}
+
+#sec_2{
+    margin-top: 10px;
+    padding: 30px;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 50px;
+}
+#h1{
+    padding-left: 20px;
+    line-height: 2.5;
+    height: 50px;
+    font-size: 15pt;
+    font-weight: 800;
+    background-color: pink;
+}
+#se{
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+    width: 19%;
+    
+}
+.ses{
+    text-align: left;
+    margin: 10px;
+    font-size: 11pt;
+    font-weight: 800;
+    padding-left: 20px;
+}
+.ses2{
+    text-align: left;
+    margin: 10px;
+    padding-left: 25px;
+    font-size: 11pt;
+    font-weight: 800;
+}
+.img_c{
+    width: 80%;
+    height: auto;
+    margin-left: 30px;
+}
+
+.img_c:hover{
+    opacity: 0.3;
+}

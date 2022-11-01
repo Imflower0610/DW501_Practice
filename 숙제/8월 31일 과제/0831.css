@@ -1,0 +1,136 @@
+#hanacare{
+    width:auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+#login{
+    width: auto;
+    height: 30px;
+    text-align: end;
+}
+a{
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+}
+
+#care_wrap{
+    width: auto;
+    height: auto;
+}
+#head{
+    margin-left: 100px;
+    width: 1200px;
+    height: 100px;
+}
+.logo{
+    width: 100px;
+    height: 20px;
+    float: left;
+}
+.logo_img{
+    width: 200px;
+    height: auto;
+}
+.menu_wrap{
+    width: 1000px;
+    height: 100px;
+    margin-left: 150px;
+    padding-top: 10px;
+}
+.menu{
+    width: auto;
+    height: auto;
+    list-style: none;
+    display: flex;
+}
+.menu_list{
+    width: 200px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+#main_wrap{
+    margin-left:0;
+    width: auto;
+    height: 500px;
+    background-color: rgb(214, 236, 214);
+    border-top: 1px solid rgb(200 200 200);
+    border-bottom: 1px solid rgb(200 200 200);
+}
+.main_img{
+    width: 1050px;
+    height: 400px;
+    margin-left: 100px;
+    margin-top: 50px;
+    float: left;
+}
+.main_img img{
+    width: 1000px;
+    height: 400px;
+}
+.main_sub{
+    width: 200px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.sub{
+    width: 200px;
+    height: 200px;
+}
+.sub img{
+    margin-left: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}  
+.text{
+    height: 30px;
+    font-size: 25px; 
+    font-weight:900;
+}
+
+
+.b{background-color: rgb(247, 150, 114);
+margin-top: 20px;}
+.a{background-color: rgb(255, 217, 0);
+margin-top: 50px;}
+
+
+#foot{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 100px;
+
+}
+.title{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.cat{
+    width: 1500px;
+    height: 300px;
+}
+.img_box{
+    float: left;
+    width: 155px; 
+    text-align: center;
+}
+
+.img{
+    width: 110px;
+    border-radius: 100%;
+}
+.img_title{
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}

@@ -1,0 +1,95 @@
+#mbti{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    font-family: '바탕체';
+    font-size: 10pt;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.m_title{
+    width:750px;
+    height: 50px;
+    text-align: center;
+    font-size: 15pt;
+}
+
+#mbti_wrap{
+    width: 750px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.m_list_wrap{
+}
+.m_list{
+        height: 40px;
+        line-height: 40px;
+}
+.m_list_d{
+    line-height: 1.6;
+}
+.m_list_dt{
+    font-weight: 400;
+    font-size: 12pt;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 750px;
+    height: auto;
+    border-collapse: collapse;
+    border: 2px solid rgb(71 176 187);
+    border-left: 0;
+    border-right: 0;
+   
+}
+.a{
+display: flex;
+width: 750px;
+height: auto;
+line-height: 45px;
+text-align: left;
+line-height: 1;
+}
+.a div{
+    border: 1px solid rgb(71 176 187);
+}
+.num{
+    font-size: 10pt;
+    width: 3%;
+    border-left: 0;
+}
+.e{
+    width: 45.5%;
+}
+.n{
+    width: 3%;
+    font-size: 10pt;
+}
+.p1{
+   width: 48.5%;
+ 
+}
+.p2{
+    width: 45.5%;
+ 
+}
+
+.list_t{
+    text-align: center;
+    line-height: 1.6;
+    font-size: 15pt;
+    height: 40px;
+    
+}
+h3{line-height: 1.2;} 
+
+.blank{
+    height: 40px;
+    border: 1px solid rgb(71 176 187);
+}
