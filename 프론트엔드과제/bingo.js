@@ -20,7 +20,7 @@ window.onload = function () {
   for (var i = 0; i < td.length; i++) {
     td[i].innerHTML = user_bingo[i];
     td[i].addEventListener("click", function () {
-      this.style.background = "grey";
+      this.style.background = "lightgrey";
       check(this.innerHTML);
     });
   }
@@ -80,8 +80,6 @@ function check(n) {
   count.innerHTML = "BINGO : " + end;
   var res = document.getElementById("out");
   if (end == 5) {
-    alert("빙고");
-    console.log("BINGO! The user wins!");
     res.innerHTML = "BINGO! The user wins!";
   }
 }
