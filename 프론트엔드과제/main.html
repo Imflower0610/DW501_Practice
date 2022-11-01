@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👑 SNACK GAME</title>
+  </head>
+  <script
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(document).ready(function () {
+      $("#a").on("click", function () {
+        $("#games").stop().slideToggle("fast");
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="init.css" />
+  <link rel="stylesheet" href="default.css" />
+
+  <body>
+    <div id="body">
+      <header id="header">
+        <div style="text-align: center">
+          <a href="main.html"><img id="img" src="title.png" /></a>
+        </div>
+        <nav>
+          <div id="menu">
+            <div><a href="main.html"> HOME</a></div>
+            <div id="a">
+              GAME
+              <ul id="games">
+                <li><a href="">MAZE GAME</a></li>
+                <li><a href="">APPLE GAME</a></li>
+                <li><a href="">TAG GAME</a></li>
+                <li><a href="">BINGO GAME</a></li>
+                <li><a href="2048.html">2048 GAME</a></li>
+              </ul>
+            </div>
+            <div>JOIN US</div>
+            <div>LOG IN / OUT</div>
+          </div>
+        </nav>
+      </header>
+      <div id="game">
+        <div class="maze game"></div>
+        <div class="apple game"></div>
+        <div class="tag game"></div>
+      </div>
+      <div id="game2">
+        <div class="bingo game"></div>
+        <div class="2048 game">
+          <img src="2048.PNG" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
