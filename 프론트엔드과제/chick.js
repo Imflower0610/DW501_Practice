@@ -10,11 +10,11 @@ img2.src = "dinosaur.png";
 var dino = {
   x: 100,
   y: 400,
-  width: 100,
-  height: 100,
+  width: 10,
+  height: 10,
   draw() {
     ctx.fillStyle = "green";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    //ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.drawImage(img2, this.x, this.y);
   },
 };
@@ -25,12 +25,12 @@ class Cactus {
   constructor() {
     this.x = 1500;
     this.y = 400;
-    this.width = 80;
-    this.height = 80;
+    this.width = 10;
+    this.height = 10;
   }
   draw() {
     ctx.fillStyle = "red";
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    //ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.drawImage(img1, this.x, this.y);
   }
 }
@@ -102,7 +102,7 @@ document.addEventListener("keydown", function (e) {
 
 // 게임오버 처리
 function gameover() {
-  alert("Game Over!\nScore : " + score + "\n다시 도전 하시겠습니까?");
+  alert("Game Over!\n다시 도전 하시겠습니까?");
   setTimeout(function () {
     location.reload();
   }, 0);
