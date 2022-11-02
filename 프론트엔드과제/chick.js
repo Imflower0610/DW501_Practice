@@ -1,8 +1,8 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth - 150;
-canvas.height = window.innerHeight - 200;
+var score = document.getElementById("score");
+canvas.width = window.innerWidth - 100;
+canvas.height = window.innerHeight - 300;
 
 var img2 = new Image();
 img2.src = "dinosaur.png";
@@ -10,11 +10,11 @@ img2.src = "dinosaur.png";
 var dino = {
   x: 100,
   y: 400,
-  width: 120,
-  height: 120,
+  width: 100,
+  height: 100,
   draw() {
     ctx.fillStyle = "green";
-    //ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.drawImage(img2, this.x, this.y);
   },
 };
@@ -25,12 +25,12 @@ class Cactus {
   constructor() {
     this.x = 1500;
     this.y = 400;
-    this.width = 100;
-    this.height = 100;
+    this.width = 80;
+    this.height = 80;
   }
   draw() {
     ctx.fillStyle = "red";
-    //ctx.fillRect(this.x, this.y, this.width, this.height);
+    ctx.fillRect(this.x, this.y, this.width, this.height);
     ctx.drawImage(img1, this.x, this.y);
   }
 }
@@ -46,11 +46,11 @@ function ani() {
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  if (timer % 800 === 0) {
+  if (timer % 100 === 0) {
     var cactus = new Cactus();
     cactuss.push(cactus);
   }
-  if (timer % 600 === 0) {
+  if (timer % 450 === 0) {
     var cactus = new Cactus();
     cactuss.push(cactus);
   }
@@ -60,19 +60,19 @@ function ani() {
     if (a.x < 0) {
       o.splice(i, 1);
     }
-    a.x--;
+    a.x -= 5;
     attack(dino, a);
     a.draw();
   });
 
   if (jump == true) {
-    dino.y--;
-    jump_timer++;
+    dino.y -= 8;
+    jump_timer += 3;
   }
 
   if (jump == false) {
     if (dino.y < 400) {
-      dino.y++;
+      dino.y += 8;
     }
   }
 
@@ -82,9 +82,7 @@ function ani() {
   }
   dino.draw();
 }
-
 ani();
-
 //충돌확인
 function attack(dino, cactus) {
   var dx = cactus.x - (dino.x + dino.width);
@@ -92,7 +90,7 @@ function attack(dino, cactus) {
   if (dx < 0 && dy < 0) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     cancelAnimationFrame(animation);
-    alert("game over");
+    gameover();
   }
 }
 var jump = false;
@@ -101,3 +99,11 @@ document.addEventListener("keydown", function (e) {
     jump = true;
   }
 });
+
+// 게임오버 처리
+function gameover() {
+  alert("Game Over!\nScore : " + score + "\n다시 도전 하시겠습니까?");
+  setTimeout(function () {
+    location.reload();
+  }, 0);
+}
