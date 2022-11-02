@@ -17,21 +17,38 @@ while (com_bingo.length != 25) {
 
 window.onload = function () {
   var td = document.querySelectorAll(".me_box");
+  var td_c = document.querySelectorAll(".com_box");
   for (var i = 0; i < td.length; i++) {
     td[i].innerHTML = user_bingo[i];
+    td_c[i].innerHTML = com_bingo[i];
     td[i].addEventListener("click", function () {
       this.style.background = "lightgrey";
+      check_com(this.innerHTML);
       check(this.innerHTML);
     });
   }
 };
-
+function check_com(n) {
+  for (let i in com_bingo) {
+    if (com_bingo[i] == n) {
+      if (com_bingo[i] == td_c[i].value) td_c[i].style.background = "lightgrey";
+      com_bingo[i] = 0;
+    }
+  }
+}
 function check(n) {
   // 체크한 숫자를 빙고배열에서 제외시키기
   for (let i in user_bingo) {
     if (user_bingo[i] == n) {
       // 선택한 숫자를 배열에서 찾기
       user_bingo[i] = 0;
+      break;
+    }
+  }
+  for (let i in com_bingo) {
+    if (com_bingo[i] == n) {
+      // 선택한 숫자를 배열에서 찾기
+      com_bingo[i] = 0;
       break;
     }
   }
