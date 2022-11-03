@@ -80,6 +80,11 @@ function ani() {
     jump = false;
     jump_timer = 0;
   }
+  if (dino.y == 0) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // cancelAnimationFrame(animation);
+    gameover();
+  }
   dino.draw();
 }
 ani();
